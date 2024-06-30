@@ -1,0 +1,1044 @@
+rps@rps-virtual-machine:~$ mkdir LinuxDemos
+rps@rps-virtual-machine:~$ cd linuxdemos
+bash: cd: linuxdemos: No such file or directory
+rps@rps-virtual-machine:~$ cd LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ pwd
+/home/rps/LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ mkdir dum2
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+dum2
+rps@rps-virtual-machine:~/LinuxDemos$ rmdir dum2
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+rps@rps-virtual-machine:~/LinuxDemos$ touch Demo1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ touch Demo2.txt Demo3.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+Demo1.txt  Demo2.txt  Demo3.txt
+rps@rps-virtual-machine:~/LinuxDemos$ mkdir dum2
+rps@rps-virtual-machine:~/LinuxDemos$ ls -l
+total 4
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+rps@rps-virtual-machine:~/LinuxDemos$ ls -a
+.  ..  Demo1.txt  Demo2.txt  Demo3.txt  dum2
+rps@rps-virtual-machine:~/LinuxDemos$ ls -t
+dum2  Demo2.txt  Demo3.txt  Demo1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls -r
+dum2  Demo3.txt  Demo2.txt  Demo1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above command is recursive output
+rps@rps-virtual-machine:~/LinuxDemos$ ls -S
+dum2  Demo1.txt  Demo2.txt  Demo3.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above command is sorting
+rps@rps-virtual-machine:~/LinuxDemos$ ls -R
+.:
+Demo1.txt  Demo2.txt  Demo3.txt  dum2
+
+./dum2:
+rps@rps-virtual-machine:~/LinuxDemos$ #ABOVE IS LIST FILES DIRECTORIES AND SUBDIRECTORIES
+rps@rps-virtual-machine:~/LinuxDemos$ ls -i
+8519728 Demo1.txt  8519729 Demo2.txt  8519730 Demo3.txt  8519731 dum2
+rps@rps-virtual-machine:~/LinuxDemos$ #above index number for each file and directory
+rps@rps-virtual-machine:~/LinuxDemos$ ls -g
+total 4
+-rw-rw-r-- 1 rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps 4096 Jun 22 10:10 dum2
+rps@rps-virtual-machine:~/LinuxDemos$ #above ownershipd details
+rps@rps-virtual-machine:~/LinuxDemos$ vi fi.txt
+rps@rps-virtual-machine:~/LinuxDemos$ vi se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls -l
+total 4
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 fi.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls -t
+se.txt  fi.txt  dum2  Demo2.txt  Demo3.txt  Demo1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls -t | head -1
+se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above command t stands for last modified time
+rps@rps-virtual-machine:~/LinuxDemos$ #lh stands for human readable format
+rps@rps-virtual-machine:~/LinuxDemos$ ls -lh
+total 4.0K
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4.0K Jun 22 10:10 dum2
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 fi.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #ld list directories only
+rps@rps-virtual-machine:~/LinuxDemos$ ls -ld
+drwxrwxr-x 3 rps rps 4096 Jun 22 10:19 .
+rps@rps-virtual-machine:~/LinuxDemos$ cat > c1.txt
+Hello
+Good Morning
+Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ cat c1.txt
+Hello
+Good Morning
+Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ cat > c2.txt
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ cat c1.txt c2.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ cat -n c1.txt
+     1	Hello
+     2	Good Morning
+     3	Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ #above -n stands for number of lines
+rps@rps-virtual-machine:~/LinuxDemos$ cat c1.txt c2.txt > merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat merge.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ #append the contents of one file to another file
+rps@rps-virtual-machine:~/LinuxDemos$ cat > c3.txt
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ cat c3.txt
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ cat c3.txt >> c2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat c3.txt
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ cat c2.txt
+Good day
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ tac c2.txt
+django
+mongodb
+python
+java 
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ #above backward, reverse order command
+rps@rps-virtual-machine:~/LinuxDemos$ cat c1.txt c2.txt c3.txt > finalmerge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat finalmerge.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ #above merge multiple files
+rps@rps-virtual-machine:~/LinuxDemos$ cat *.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+Hello
+Good Morning
+Happy Learning
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ #above display all .txt file content!
+rps@rps-virtual-machine:~/LinuxDemos$ cat c3.txt
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ cat >> c3.txt
+Bye!!!!
+rps@rps-virtual-machine:~/LinuxDemos$ cat c3.txt
+java 
+python
+mongodb
+django
+Bye!!!!
+rps@rps-virtual-machine:~/LinuxDemos$ #above appending the content to existing file
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo2.txt  dum2            fi.txt     se.txt
+c2.txt  Demo1.txt  Demo3.txt  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ touch u1.tx u2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo2.txt  dum2            fi.txt     se.txt  u2.txt
+c2.txt  Demo1.txt  Demo3.txt  finalmerge.txt  merge.txt  u1.tx
+rps@rps-virtual-machine:~/LinuxDemos$ rm u1.tx u2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo2.txt  dum2            fi.txt     se.txt
+c2.txt  Demo1.txt  Demo3.txt  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ rm -i fi.txt
+rm: remove regular empty file 'fi.txt'? n
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo2.txt  dum2            fi.txt     se.txt
+c2.txt  Demo1.txt  Demo3.txt  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above -i stands for remove file confirmation yes or no
+rps@rps-virtual-machine:~/LinuxDemos$ cat fi.txt
+rps@rps-virtual-machine:~/LinuxDemos$ rm -i fi.txt
+rm: remove regular empty file 'fi.txt'? y
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c2.txt  c3.txt  Demo1.txt  Demo2.txt  Demo3.txt  dum2  finalmerge.txt  merge.txt  se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #rm -> would not delete the directories
+rps@rps-virtual-machine:~/LinuxDemos$ #rm -r ->deletes all the files and subdirectories
+rps@rps-virtual-machine:~/LinuxDemos$ cat se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c2.txt  c3.txt  Demo1.txt  Demo2.txt  Demo3.txt  dum2  finalmerge.txt  merge.txt  se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat merge.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ cp merge.txt copy1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat copy1.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+rps@rps-virtual-machine:~/LinuxDemos$ #above copy command -> destination file exists(overridden), destination file not exists(create and copy)
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ mkdir dummmm1
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo1.txt  Demo3.txt  dummmm1         merge.txt
+c2.txt  copy1.txt  Demo2.txt  dum2       finalmerge.txt  se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ mkdir dir1
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo1.txt  Demo3.txt  dum2     finalmerge.txt  se.txt
+c2.txt  copy1.txt  Demo2.txt  dir1       dummmm1  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cp copy1.txt merge.txt dir1/
+rps@rps-virtual-machine:~/LinuxDemos$ ls -lR
+.:
+total 36
+-rw-rw-r-- 1 rps rps   34 Jun 22 10:28 c1.txt
+-rw-rw-r-- 1 rps rps   37 Jun 22 10:32 c2.txt
+-rw-rw-r-- 1 rps rps   36 Jun 22 10:37 c3.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:46 copy1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:49 dir1
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:48 dummmm1
+-rw-rw-r-- 1 rps rps   99 Jun 22 10:35 finalmerge.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:30 merge.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 se.txt
+
+./dir1:
+total 8
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:49 copy1.txt
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:49 merge.txt
+
+./dum2:
+total 0
+
+./dummmm1:
+total 0
+rps@rps-virtual-machine:~/LinuxDemos$ #ABOVE COPY FILE TO SPECIFIC DIRECTORY!
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ pwd
+/home/rps/LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ cp -R /home/rps/LinuxDemos/dir1/ /home/rps/LinuxDemos/dummmm1/
+rps@rps-virtual-machine:~/LinuxDemos$ ls -lR
+.:
+total 36
+-rw-rw-r-- 1 rps rps   34 Jun 22 10:28 c1.txt
+-rw-rw-r-- 1 rps rps   37 Jun 22 10:32 c2.txt
+-rw-rw-r-- 1 rps rps   36 Jun 22 10:37 c3.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:46 copy1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:49 dir1
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+drwxrwxr-x 3 rps rps 4096 Jun 22 10:53 dummmm1
+-rw-rw-r-- 1 rps rps   99 Jun 22 10:35 finalmerge.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:30 merge.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:19 se.txt
+
+./dir1:
+total 8
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:49 copy1.txt
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:49 merge.txt
+
+./dum2:
+total 0
+
+./dummmm1:
+total 4
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:53 dir1
+
+./dummmm1/dir1:
+total 8
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:53 copy1.txt
+-rw-rw-r-- 1 rps rps 43 Jun 22 10:53 merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above copy DIRECTORIES!
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ 
+
+==============================================================
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo1.txt  Demo3.txt  dum2     finalmerge.txt  se.txt
+c2.txt  copy1.txt  Demo2.txt  dir1       dummmm1  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat Demo1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat Demo2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cp -i Demo1.txt Demo2.txt
+cp: overwrite 'Demo2.txt'? n
+rps@rps-virtual-machine:~/LinuxDemos$ cp -i Demo1.txt Demo112.txt
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo112.txt  Demo2.txt  dir1  dummmm1         merge.txt
+c2.txt  copy1.txt  Demo1.txt    Demo3.txt  dum2  finalmerge.txt  se.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #copying with confirmation for existing files
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ mkdir lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ cp *.txt lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ cd lastdum
+rps@rps-virtual-machine:~/LinuxDemos/lastdum$ ls
+c1.txt  c3.txt     Demo112.txt  Demo2.txt  finalmerge.txt  se.txt
+c2.txt  copy1.txt  Demo1.txt    Demo3.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos/lastdum$ cd
+rps@rps-virtual-machine:~$ cd linuxdemos
+bash: cd: linuxdemos: No such file or directory
+rps@rps-virtual-machine:~$ cd LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo112.txt  Demo2.txt  dir1  dummmm1         lastdum    se.txt
+c2.txt  copy1.txt  Demo1.txt    Demo3.txt  dum2  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #copy files using star wildcard symbol
+rps@rps-virtual-machine:~/LinuxDemos$ 
+================================================
+
+
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt     Demo112.txt  Demo2.txt  dir1  dummmm1         lastdum    se.txt
+c2.txt  copy1.txt  Demo1.txt    Demo3.txt  dum2  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ mv copy1.txt copynew1.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  c3.txt        Demo112.txt  Demo2.txt  dir1  dummmm1         lastdum    se.txt
+c2.txt  copynew1.txt  Demo1.txt    Demo3.txt  dum2  finalmerge.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #mv command rename the file
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ mv c2.txt /home/rps/LinuxDemos/dir1
+rps@rps-virtual-machine:~/LinuxDemos$ cd dir1
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ ls
+c2.txt  copy1.txt  merge.txt
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ cd 
+rps@rps-virtual-machine:~$ cd LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ #above mv stands for move the file
+rps@rps-virtual-machine:~/LinuxDemos$ mv se.txt merge.txt /home/rps/LinuxDemos/dir1
+rps@rps-virtual-machine:~/LinuxDemos$ cd dir1
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ ls
+c2.txt  copy1.txt  merge.txt  se.txt
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ #above move multiple files
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ cd..
+cd..: command not found
+rps@rps-virtual-machine:~/LinuxDemos/dir1$ cd
+rps@rps-virtual-machine:~$ cd LinuxDemos
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  copynew1.txt  Demo1.txt  Demo3.txt  dum2     finalmerge.txt
+c3.txt  Demo112.txt   Demo2.txt  dir1       dummmm1  lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ mv dummmm1 dum12345
+rps@rps-virtual-machine:~/LinuxDemos$ #above rename the directory
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c1.txt  copynew1.txt  Demo1.txt  Demo3.txt  dum12345  finalmerge.txt
+c3.txt  Demo112.txt   Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ mv -i c1.txt c111.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c111.txt  copynew1.txt  Demo1.txt  Demo3.txt  dum12345  finalmerge.txt
+c3.txt    Demo112.txt   Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ mv -i c111.txt Demo112.txt
+mv: overwrite 'Demo112.txt'? n
+rps@rps-virtual-machine:~/LinuxDemos$ #above rename with confirmation
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat c111.txt
+Hello
+Good Morning
+Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ mv -b c111.txt Demo112.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ cat Demo112.txt
+Hello
+Good Morning
+Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ cat Demo112.txt~
+rps@rps-virtual-machine:~/LinuxDemos$ #above -b stands for backup of an destination file if it exists with tilde(~) character
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ lds
+Command 'lds' not found, did you mean:
+  command 'lsd' from snap lsd (0.16.0)
+  command 'lvs' from deb lvm2 (2.03.11-2.1ubuntu4)
+  command 'ldb' from deb rocksdb-tools (6.11.4-3)
+  command 'ls' from deb coreutils (8.32-4.1ubuntu1)
+  command 'les' from deb atm-tools (1:2.5.1-4build2)
+  command 'ld' from deb binutils (2.38-4ubuntu2.3)
+  command 'sds' from deb simh (3.8.1-6.1)
+  command 'lrs' from deb lrslib (0.71a-1)
+  command 'ldd' from deb libc-bin (2.35-0ubuntu3.4)
+See 'snap info <snapname>' for additional versions.
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ rename c3.txt c3333.txt
+Bareword "c3" not allowed while "strict subs" in use at line 2, in:
+c3.txt
+rps@rps-virtual-machine:~/LinuxDemos$ rename Demo2.txt Demo212.txt
+Bareword "Demo2" not allowed while "strict subs" in use at line 2, in:
+Demo2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat Demo112.txt
+Hello
+Good Morning
+Happy Learning
+rps@rps-virtual-machine:~/LinuxDemos$ sudo apt-get install rename
+[sudo] password for rps: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+rename is already the newest version (1.30-1).
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 47 not upgraded.
+rps@rps-virtual-machine:~/LinuxDemos$ rename Demo2.txt Demo212.txt
+Bareword "Demo2" not allowed while "strict subs" in use at line 2, in:
+Demo2.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ rename finalmerge.txt finalmerge1.txt
+Bareword "finalmerge" not allowed while "strict subs" in use at line 2, in:
+finalmerge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ rename 'finalmerge.txt' finalmerge1.txt
+Bareword "finalmerge" not allowed while "strict subs" in use at line 2, in:
+finalmerge.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat > hh.dat
+good noon!
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt  lastdum
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      hh.dat
+rps@rps-virtual-machine:~/LinuxDemos$ rename 's/hh/newhh' hh.dat
+Substitution replacement not terminated at line 1, in:
+s/hh/newhh
+rps@rps-virtual-machine:~/LinuxDemos$ rename 's/hh/newhh/' hh.dat
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt  newhh.dat
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ #rename s stands for substitute oldfilename/newfilename
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > gg.dat
+Microsoft AZURE
+rps@rps-virtual-machine:~/LinuxDemos$ cat > gg1.dat
+Devops
+rps@rps-virtual-machine:~/LinuxDemos$ rename 's/.dat/.txt' *.txt
+Substitution replacement not terminated at line 1, in:
+s/.dat/.txt
+rps@rps-virtual-machine:~/LinuxDemos$ rename 's/.dat/.txt/' *.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt  gg.dat   newhh.dat
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      gg1.dat         lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ rename 's/.dat/.txt/' *.dat
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt   Demo1.txt  Demo3.txt  dum12345  finalmerge.txt  gg.txt   newhh.txt
+copynew1.txt  Demo112.txt~  Demo2.txt  dir1       dum2      gg1.txt         lastdum
+rps@rps-virtual-machine:~/LinuxDemos$ #regulat expression substitution of .dat into .txt
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ cat technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ head technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+rps@rps-virtual-machine:~/LinuxDemos$ #head default first 10 lines will be displayed!
+rps@rps-virtual-machine:~/LinuxDemos$ head -n 5 technologies.txt
+java
+
+python
+quantumcomputing
+AL
+rps@rps-virtual-machine:~/LinuxDemos$ #number of lines will be displayed
+rps@rps-virtual-machine:~/LinuxDemos$ ls
+c3.txt        Demo112.txt~  Demo3.txt  dum2            gg.txt     technologies.txt
+copynew1.txt  Demo1.txt     dir1       finalmerge.txt  lastdum
+Demo112.txt   Demo2.txt     dum12345   gg1.txt         newhh.txt
+rps@rps-virtual-machine:~/LinuxDemos$ head technologies.txt finalmerge.txt
+==> technologies.txt <==
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+
+==> finalmerge.txt <==
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+rps@rps-virtual-machine:~/LinuxDemos$ head -q technologies.txt finalmerge.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+rps@rps-virtual-machine:~/LinuxDemos$ cat technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ head -n 12 technologies.txt | tail -5
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+rps@rps-virtual-machine:~/LinuxDemos$ ls 
+c3.txt        Demo112.txt~  Demo3.txt  dum2            gg.txt     technologies.txt
+copynew1.txt  Demo1.txt     dir1       finalmerge.txt  lastdum
+Demo112.txt   Demo2.txt     dum12345   gg1.txt         newhh.txt
+rps@rps-virtual-machine:~/LinuxDemos$ ls -t | head -n 3
+technologies.txt
+gg1.txt
+gg.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above cut three most recently used files
+rps@rps-virtual-machine:~/LinuxDemos$ ls -t | head -n 3 | sort
+gg1.txt
+gg.txt
+technologies.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ tail technologies.txt
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ #above default last 10 lines by using tail command
+rps@rps-virtual-machine:~/LinuxDemos$ tail -3 technologies.txt
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ tail finalmerge.txt technologies.txt
+==> finalmerge.txt <==
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+
+==> technologies.txt <==
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ tail -v technologies.txt
+==> technologies.txt <==
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ #above tail is preceded with filename
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ 
+
+==========================================
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > gradings.txt
+java-10
+dotnet-6
+python-3
+macos-4
+linux-1
+rps@rps-virtual-machine:~/LinuxDemos$ cat gradings.txt
+java-10
+dotnet-6
+python-3
+macos-4
+linux-1
+rps@rps-virtual-machine:~/LinuxDemos$ cut -d -f2 gradings.txt
+cut: the delimiter must be a single character
+Try 'cut --help' for more information.
+rps@rps-virtual-machine:~/LinuxDemos$ cut -d- -f2 gradings.txt
+10
+6
+3
+4
+1
+rps@rps-virtual-machine:~/LinuxDemos$ #-d=>delimiter -f=>-columnnumber or fieldnumber
+rps@rps-virtual-machine:~/LinuxDemos$ cut -b 1,2,3 gradings.txt
+jav
+dot
+pyt
+mac
+lin
+rps@rps-virtual-machine:~/LinuxDemos$ cut -b 1,3,5 gradings.txt
+jv-
+dte
+pto
+mcs
+lnx
+rps@rps-virtual-machine:~/LinuxDemos$ #above extract specific characters
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cut -c 1-5 gradings.txt
+java-
+dotne
+pytho
+macos
+linux
+rps@rps-virtual-machine:~/LinuxDemos$ #above extract first five charaCTERS
+rps@rps-virtual-machine:~/LinuxDemos$ cut -c 1- gradings.txt
+java-10
+dotnet-6
+python-3
+macos-4
+linux-1
+rps@rps-virtual-machine:~/LinuxDemos$ #above selected from beginnning to end of line
+rps@rps-virtual-machine:~/LinuxDemos$ cat gradings.txt |head -n 3|cut -d- -f1 > newgradings.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat newgradings.txt
+java
+dotnet
+python
+rps@rps-virtual-machine:~/LinuxDemos$ #above cat head cut multiple pipeline command
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ #comm command compare the sorted file line by line
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ #-1 suppress first column(unique line of 1st file)
+rps@rps-virtual-machine:~/LinuxDemos$ #-2 suppress second column (unique line of second file)
+rps@rps-virtual-machine:~/LinuxDemos$ #-3 suppress third column (lines common of both files)
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > comm1.txt
+a
+b
+d
+e
+f
+g
+h
+rps@rps-virtual-machine:~/LinuxDemos$ cat > comm2.txt
+g
+h
+i
+j
+k
+l
+m
+rps@rps-virtual-machine:~/LinuxDemos$ comm comm1.txt comm2.txt 
+a
+b
+d
+e
+f
+		g
+		h
+	i
+	j
+	k
+	l
+	m
+rps@rps-virtual-machine:~/LinuxDemos$ cat finalmerge.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ #grep stands for global regular expression print searching
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ grep -i "java" finalmerge.txt
+java 
+java 
+rps@rps-virtual-machine:~/LinuxDemos$ #above case insensitive searching
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ grep -c "java" finalmerge.txt
+2
+rps@rps-virtual-machine:~/LinuxDemos$ #above count the number of matches
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ grep -l "java" *
+c3.txt
+grep: dir1: Is a directory
+grep: dum12345: Is a directory
+grep: dum2: Is a directory
+finalmerge.txt
+gradings.txt
+grep: lastdum: Is a directory
+newgradings.txt
+technologies.txt
+rps@rps-virtual-machine:~/LinuxDemos$ #above list the filenames that matches the string pattern
+rps@rps-virtual-machine:~/LinuxDemos$ grep w "java" finalmerge.txt
+grep: java: No such file or directory
+rps@rps-virtual-machine:~/LinuxDemos$ grep -w "java" finalmerge.txt
+java 
+java 
+rps@rps-virtual-machine:~/LinuxDemos$ grep -n "java" finalmerge.txt
+5:java 
+9:java 
+rps@rps-virtual-machine:~/LinuxDemos$ #above grep with line number
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ grep -v "java" finalmerge.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+python
+mongodb
+django
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ #above grep is selecting non-matching lines
+rps@rps-virtual-machine:~/LinuxDemos$ #above grep is other than java
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > yyy.txt
+a
+b
+d
+rps@rps-virtual-machine:~/LinuxDemos$ cat yyyy.txt
+cat: yyyy.txt: No such file or directory
+rps@rps-virtual-machine:~/LinuxDemos$ cat yyy.txt
+a
+b
+d
+rps@rps-virtual-machine:~/LinuxDemos$ #tee->puts stdin to stdout and also put them into file
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat finalmerge.txt | tee finalmerge1.txt | cat
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ cat finalmerge1.txt
+Hello
+Good Morning
+Happy Learning
+Good day
+java 
+python
+mongodb
+django
+java 
+python
+mongodb
+django
+rps@rps-virtual-machine:~/LinuxDemos$ ls -l | tee -a wiproprogram.ls
+total 72
+-rw-rw-r-- 1 rps rps   36 Jun 22 10:37 c3.txt
+-rw-rw-r-- 1 rps rps   14 Jun 22 12:30 comm1.txt
+-rw-rw-r-- 1 rps rps   14 Jun 22 12:31 comm2.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:46 copynew1.txt
+-rw-rw-r-- 1 rps rps   34 Jun 22 10:28 Demo112.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:59 Demo112.txt~
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 11:39 dir1
+drwxrwxr-x 3 rps rps 4096 Jun 22 10:53 dum12345
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+-rw-rw-r-- 1 rps rps   99 Jun 22 12:45 finalmerge1.txt
+-rw-rw-r-- 1 rps rps   99 Jun 22 10:35 finalmerge.txt
+-rw-rw-r-- 1 rps rps    7 Jun 22 11:58 gg1.txt
+-rw-rw-r-- 1 rps rps   16 Jun 22 11:58 gg.txt
+-rw-rw-r-- 1 rps rps   42 Jun 22 12:16 gradings.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 11:01 lastdum
+-rw-rw-r-- 1 rps rps   19 Jun 22 12:26 newgradings.txt
+-rw-rw-r-- 1 rps rps   11 Jun 22 11:53 newhh.txt
+-rw-rw-r-- 1 rps rps  147 Jun 22 12:03 technologies.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 12:47 wiproprogram.ls
+-rw-rw-r-- 1 rps rps    6 Jun 22 12:44 yyy.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat wiproprogram.ls
+total 72
+-rw-rw-r-- 1 rps rps   36 Jun 22 10:37 c3.txt
+-rw-rw-r-- 1 rps rps   14 Jun 22 12:30 comm1.txt
+-rw-rw-r-- 1 rps rps   14 Jun 22 12:31 comm2.txt
+-rw-rw-r-- 1 rps rps   43 Jun 22 10:46 copynew1.txt
+-rw-rw-r-- 1 rps rps   34 Jun 22 10:28 Demo112.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:59 Demo112.txt~
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo1.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo2.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 10:09 Demo3.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 11:39 dir1
+drwxrwxr-x 3 rps rps 4096 Jun 22 10:53 dum12345
+drwxrwxr-x 2 rps rps 4096 Jun 22 10:10 dum2
+-rw-rw-r-- 1 rps rps   99 Jun 22 12:45 finalmerge1.txt
+-rw-rw-r-- 1 rps rps   99 Jun 22 10:35 finalmerge.txt
+-rw-rw-r-- 1 rps rps    7 Jun 22 11:58 gg1.txt
+-rw-rw-r-- 1 rps rps   16 Jun 22 11:58 gg.txt
+-rw-rw-r-- 1 rps rps   42 Jun 22 12:16 gradings.txt
+drwxrwxr-x 2 rps rps 4096 Jun 22 11:01 lastdum
+-rw-rw-r-- 1 rps rps   19 Jun 22 12:26 newgradings.txt
+-rw-rw-r-- 1 rps rps   11 Jun 22 11:53 newhh.txt
+-rw-rw-r-- 1 rps rps  147 Jun 22 12:03 technologies.txt
+-rw-rw-r-- 1 rps rps    0 Jun 22 12:47 wiproprogram.ls
+-rw-rw-r-- 1 rps rps    6 Jun 22 12:44 yyy.txt
+rps@rps-virtual-machine:~/LinuxDemos$ cat technologies.txt
+java
+
+python
+quantumcomputing
+AL
+AR
+AI
+Devops
+Biometrics
+Edge Computing
+DOcker
+JSP
+Servlets
+SpringBoot
+JIRA
+Jenkins
+Microservices
+Struts
+VR
+DJango
+rps@rps-virtual-machine:~/LinuxDemos$ sort technologies.txt
+
+AI
+AL
+AR
+Biometrics
+Devops
+DJango
+DOcker
+Edge Computing
+java
+Jenkins
+JIRA
+JSP
+Microservices
+python
+quantumcomputing
+Servlets
+SpringBoot
+Struts
+VR
+rps@rps-virtual-machine:~/LinuxDemos$ #sort does not affect the original files
+rps@rps-virtual-machine:~/LinuxDemos$ sort -r technologies.txt
+VR
+Struts
+SpringBoot
+Servlets
+quantumcomputing
+python
+Microservices
+JSP
+JIRA
+Jenkins
+java
+Edge Computing
+DOcker
+DJango
+Devops
+Biometrics
+AR
+AL
+AI
+
+rps@rps-virtual-machine:~/LinuxDemos$ #above sort is reverse order
+rps@rps-virtual-machine:~/LinuxDemos$ 
+rps@rps-virtual-machine:~/LinuxDemos$ cat > employees.txt
+empid name dept salary
+1 devi HR 30430
+2 abi Testing 403140
+3 rajan HR 40332
+4 thananya Training 34939 
+5 daya HR 2913494
+rps@rps-virtual-machine:~/LinuxDemos$ cat employees.txt
+empid name dept salary
+1 devi HR 30430
+2 abi Testing 403140
+3 rajan HR 40332
+4 thananya Training 34939
+5 daya HR 2913494
+rps@rps-virtual-machine:~/LinuxDemos$ sort -k4 employees.txt
+5 daya HR 2913494
+1 devi HR 30430
+4 thananya Training 34939
+2 abi Testing 403140
+3 rajan HR 40332
+empid name dept salary
+rps@rps-virtual-machine:~/LinuxDemos$ sort -k2 employees.txt
+2 abi Testing 403140
+5 daya HR 2913494
+1 devi HR 30430
+empid name dept salary
+3 rajan HR 40332
+4 thananya Training 34939
+rps@rps-virtual-machine:~/LinuxDemos$ #above sorting done based on fieldnumber or columnnumber
+rps@rps-virtual-machine:~/LinuxDemos$ 
+
+=========================================================
+

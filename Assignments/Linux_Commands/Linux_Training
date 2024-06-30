@@ -1,0 +1,84 @@
+rps@rps-virtual-machine:~$ mkdir U04
+rps@rps-virtual-machine:~$ cd U04
+rps@rps-virtual-machine:~/U04$ #Create a Directory name LinuxTraining
+rps@rps-virtual-machine:~/U04$ mkdir LinuxTraining
+rps@rps-virtual-machine:~/U04$ #Move into LinuxTraining Directory
+rps@rps-virtual-machine:~/U04$ cd LinuxTraining
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Create a file using touch command
+rps@rps-virtual-machine:~/U04/LinuxTraining$ touch FirstDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Create a file name SecoundDemo using cat command
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cat SecoundDemo.txt
+cat: SecoundDemo: No such file or directory
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cat > SecoundDemo.txt
+Apple
+Orange
+Banana
+Gauva
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Using Cat command uppending the data
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cat >> SecoundDemo.txt
+Grapes
+Fig
+Lichi
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #open and view the content using cat command
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cat SecoundDemo.txt
+Apple
+Orange
+Banana
+Gauva
+Grapes
+Fig
+Lichi
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #display the file permission for all using Linux command
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ls -la
+total 12
+drwxrwxr-x 2 rps rps 4096 Jun 23 18:30 .
+drwxrwxr-x 3 rps rps 4096 Jun 23 18:29 ..
+-rw-rw-r-- 1 rps rps    0 Jun 23 18:30 FirstDemo.txt
+-rw-rw-r-- 1 rps rps   43 Jun 23 18:31 SecoundDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #provide read only for all users
+rps@rps-virtual-machine:~/U04/LinuxTraining$ chmod a=r SecoundDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #view the permission 
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ls -a SecoundDemo.txt
+SecoundDemo
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ls -la
+total 12
+drwxrwxr-x 2 rps rps 4096 Jun 23 18:30 .
+drwxrwxr-x 3 rps rps 4096 Jun 23 18:29 ..
+-rw-rw-r-- 1 rps rps    0 Jun 23 18:30 FirstDemo.txt
+-r--r--r-- 1 rps rps   43 Jun 23 18:31 SecoundDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #append Data now
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cat >> SecoundDemo.txt
+bash: SecoundDemo: Permission denied
+rps@rps-virtual-machine:~/U04/LinuxTraining$ create file and copy data of SecoundDemo.txt
+Command 'create' not found, did you mean:
+  command 'pcreate' from deb pbuilder-scripts (22)
+Try: sudo apt install <deb name>
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Create file and copy data of secound demo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ cp -i SecoundDemo copyfile.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #rename copy file to third demo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ rm -i copyfile.txt TirdDemo.txt
+rm: remove write-protected regular file 'copyfile.txt'? n
+rm: cannot remove 'TirdDemo.txt': No such file or directory
+rps@rps-virtual-machine:~/U04/LinuxTraining$ mv coplfile.txt to ThirdDemo.txt
+mv: target 'ThirdDemo.txt' is not a directory
+rps@rps-virtual-machine:~/U04/LinuxTraining$ mv coplfile.txt ThirdDemo.txt
+mv: cannot stat 'coplfile.txt': No such file or directory
+rps@rps-virtual-machine:~/U04/LinuxTraining$ mv ThirdDemo.txt copyfile.txt
+mv: cannot stat 'ThirdDemo.txt': No such file or directory
+rps@rps-virtual-machine:~/U04/LinuxTraining$ mv -i copyfile.txt ThirdDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Linux command to display no of lines,charater
+rps@rps-virtual-machine:~/U04/LinuxTraining$ wc SecoundDemo.txt
+ 7  7 43 SecoundDemo
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #create file using vi editor and insert personal data
+rps@rps-virtual-machine:~/U04/LinuxTraining$ vi SampleDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #opening the file using vi and exit without closing it
+rps@rps-virtual-machine:~/U04/LinuxTraining$ vi SampleDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ #Appedind data at top
+rps@rps-virtual-machine:~/U04/LinuxTraining$ vi SampleDemo.txt
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ^C
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ^C
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ^C
+rps@rps-virtual-machine:~/U04/LinuxTraining$ ^C
+rps@rps-virtual-machine:~/U04/LinuxTraining$ 
+
+

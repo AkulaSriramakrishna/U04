@@ -1,0 +1,27 @@
+Key	Issue Type	Parent	Summary	Status	Assignee	Sprint	Start date	Inferred start date	Due date	Inferred due date	Issue color
+ES-1	Epic		To build home page for ecommerce	To Do			26-06-2024	26-06-2024	25-08-2024	25-08-2024	green
+ES-10	Story	ES-1	To build footer section	In Progress		EC Sprint 1		26-06-2024		10-07-2024	purple
+ES-9	Story	ES-1	To build content section	In Progress		EC Sprint 1		26-06-2024		10-07-2024	purple
+ES-8	Story	ES-1	To build body section	To Do		EC Sprint 1		26-06-2024		10-07-2024	purple
+ES-7	Story	ES-1	To build header section	To Do							purple
+ES-2	Epic		To build checkout process for purchase	To Do			06-07-2024	06-07-2024	11-09-2024	11-09-2024	orange
+ES-11	Story	ES-2	To build cart section	To Do							purple
+ES-12	Story	ES-2	To build cart to checkout page	To Do							purple
+ES-13	Story	ES-2	To build payment page	To Do							purple
+ES-18	Story	ES-2	Success message page	To Do							purple
+ES-19	Story	ES-2	remove item from cart	To Do							purple
+ES-29	Bug	ES-2	Payment is not successfull	To Do		EC Sprint 1		26-06-2024		10-07-2024	purple
+ES-3	Epic		To build address module	To Do			19-07-2024	19-07-2024	23-10-2024	23-10-2024	yellow
+ES-14	Story	ES-3	To add address module	To Do							purple
+ES-20	Story	ES-3	billing address page	To Do							purple
+ES-27	Story	ES-3	delete address	To Do							purple
+ES-28	Story	ES-3	update address	To Do							purple
+ES-6	Epic		To build advertisement block	To Do			28-06-2024	28-06-2024	23-08-2024	23-08-2024	dark_orange
+ES-15	Story	ES-6	To build header module	To Do							purple
+ES-16	Story	ES-6	To build content section	To Do							purple
+ES-21	Story	ES-6	big billoin days	To Do							purple
+ES-22	Story	ES-6	daily ads	To Do							purple
+ES-23	Epic		Categories for product	To Do			02-07-2024	02-07-2024	13-09-2024	13-09-2024	purple
+ES-24	Story	ES-23	Electronic	In Progress		EC Sprint 1		26-06-2024		10-07-2024	purple
+ES-25	Story	ES-23	groceries	To Do							purple
+ES-26	Story	ES-23	daily essentials	To Do							purple

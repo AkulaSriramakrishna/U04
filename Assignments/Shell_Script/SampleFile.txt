@@ -1,0 +1,6 @@
+empid name salary
+001 Akhil 10000
+002 Singh 5000
+003 Bikas 34323
+004 Vinod 9000
+005 Rahul 9000
