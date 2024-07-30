@@ -1,0 +1,19 @@
+{
+  "browsers": [
+    {
+      "browser": "chrome",
+      "Search_Term": "joe biden",
+      "url": "https://google.com"
+    },
+    {
+      "browser": "chrome",
+      "Search_Term": "Narendra Modi",
+      "url": "https://google.com"
+    },
+     {
+      "browser": "chrome",
+      "Search_Term": "About Ai Gemini",
+      "url": "https://google.com"
+    }
+  ]
+}
